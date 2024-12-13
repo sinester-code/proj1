@@ -29,6 +29,11 @@ bot = Bot(config.TOKEN_BOT)
 
 @router.message(CommandStart())
 async def strt_cmd(message: Message):
-    text = "Главное меню"
+    text = ""
+    x = await get_price('TON')
+    y = await get_price('BTC')
+    z = await get_price('ETH')
+    h = await get_price('USDT')
+    text = text + f"Вы должны заплатить:\n{x} TON\n{y} BTC\n{z} ETH\n{h} USDT"
     await message.answer(text=text,reply_markup=inline.main)
     

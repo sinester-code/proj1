@@ -62,8 +62,8 @@ async def req_pay(call:CallbackQuery):
     print(currency)
     await call.message.delete()
     uid = await get_uid_bd(tg_id=call.from_user.id)
-    hh = await get_price(currency.upper())
-    price = f"{float(hh):.7f}"
+    price = await get_price(currency)
+    print(price)
     
     is_paid = await huobi_client.check_sub_account_payment(sub_uid=uid,currency=currency,amount=price)
     if is_paid == 2:

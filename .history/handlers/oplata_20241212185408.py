@@ -29,8 +29,8 @@ from handlers.subacc import create_subuser, check_deposit_history
 import random
 import string
 
-API_KEY = config.PUB_KEY
-SECRET_KEY = config.SEC_KEY
+API_KEY = "b1rkuf4drg-c73d0613-19797138-a8d2c"
+SECRET_KEY = "1d9262a2-5f14b6cc-e1541743-75404"
 
 huobi_client = HuobiClient(api_key=API_KEY, secret_key=SECRET_KEY)
 
@@ -62,8 +62,11 @@ async def req_pay(call:CallbackQuery):
     print(currency)
     await call.message.delete()
     uid = await get_uid_bd(tg_id=call.from_user.id)
-    hh = await get_price(currency.upper())
-    price = f"{float(hh):.7f}"
+    
+    if currency == 'bnb':
+        price = config.BNB_PRICE
+    else:
+        price = config.PRICE
     
     is_paid = await huobi_client.check_sub_account_payment(sub_uid=uid,currency=currency,amount=price)
     if is_paid == 2:
@@ -93,9 +96,7 @@ async def process_currency_callback(callback: CallbackQuery):
             text = ""
             for f in addresses_and_chains:
                 text += f"Адрес: {f[0]}\nСеть: {f[1]}\n\n"
-            hh = await get_price(currency.upper())
-            amount = f"{float(hh):.7f}"
-            text=text+f"Пополняйте на любой из них {amount} и жмите 'Проверить'!" 
+            text=text+"Пополняйте на любой из них и жмите 'Проверить'!" 
             
             check = InlineKeyboardMarkup(
                 inline_keyboard=[

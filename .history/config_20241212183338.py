@@ -5,8 +5,6 @@ load_dotenv()
 
 
 TOKEN_BOT = os.getenv('TOKEN_BOT')
-PUB_KEY = os.getenv('PUB_KEY')
-SEC_KEY = os.getenv('SEC_KEY')
 API = os.getenv('API')
 PRICE = float(os.getenv('PRICE', 0))
 BNB_PRICE = float(os.getenv('BNB_PRICE', 0))

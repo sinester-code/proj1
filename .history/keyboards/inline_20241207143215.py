@@ -8,7 +8,7 @@ main = InlineKeyboardMarkup(
     inline_keyboard=[
         [
             InlineKeyboardButton(text="Оформить подписку", callback_data="pay_sub"),
-            InlineKeyboardButton(text="Проверка оповещения", callback_data="fff")
+            InlineKeyboardButton(text="fff", callback_data="fff")
         ]
     ]
     

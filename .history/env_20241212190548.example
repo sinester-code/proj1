@@ -1,0 +1,18 @@
+# Telegram Bot Token
+TOKEN_BOT= # Укажите токен вашего Telegram-бота
+
+# Prices in $
+PRICE= # Укажите цену (в $) за подписку или услугу
+
+# CoinMarketCap API Key
+API= # Укажите ваш API-ключ от CoinMarketCap
+
+# Public and Secret Keys (например, для платежной системы)
+PUB_KEY= # Укажите публичный ключ
+SEC_KEY= # Укажите секретный ключ
+
+# Admin IDs
+ADMINS= # Укажите ID администраторов через запятую (например, 12345678,87654321)
+
+# Days before subscription end notification
+DAYS_BEFOR= # Укажите количество дней для уведомления о конце подписки

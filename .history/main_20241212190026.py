@@ -17,8 +17,8 @@ app = FastAPI()
 from huobi_client import HuobiClient
 
 # Конфигурация
-API_KEY = config.PUB_KEY
-SECRET_KEY = config.SEC_KEY
+API_KEY = "98dedb3c-778aeafb-64ff43f2-rfhfg2mkl3"
+SECRET_KEY = "ff87d909-64596f36-872e6ca1-77930"
 
 huobi_client = HuobiClient(api_key=API_KEY, secret_key=SECRET_KEY)
 
